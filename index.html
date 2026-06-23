@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+data:text/html;charset=utf-8,<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>PILTOVER CLASSIFIED MEDICAL SYSTEM</title>
+<title>PILTOVER MEDICAL CORE // ULTRA DOSSIER</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
@@ -12,23 +12,20 @@ margin:0;
 font-family:Inter, sans-serif;
 background:#05070c;
 color:#e6eef7;
-overflow-x:hidden;
 }
 
-/* TOP BAR */
 .topbar{
-background:rgba(15,23,42,0.9);
+background:rgba(15,23,42,0.95);
 padding:18px 25px;
 display:flex;
 justify-content:space-between;
-align-items:center;
 border-bottom:2px solid #dc2626;
 }
 
 .logo{
 font-weight:800;
-letter-spacing:3px;
 color:#dc2626;
+letter-spacing:3px;
 }
 
 .status{
@@ -36,112 +33,47 @@ font-size:12px;
 opacity:0.7;
 }
 
-/* SCAN ANIMATION */
-.scanline{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:3px;
-background:#dc2626;
-animation:scan 3s infinite linear;
-opacity:0.6;
-}
-
-@keyframes scan{
-0%{top:0}
-100%{top:100%}
-}
-
-/* STAMP */
-.stamp{
-position:absolute;
-top:90px;
-right:40px;
-transform:rotate(-15deg);
-border:3px solid #dc2626;
-color:#dc2626;
-padding:10px 18px;
-font-weight:800;
-letter-spacing:2px;
-opacity:0.9;
-}
-
-/* CONTAINER */
 .container{
-max-width:1000px;
+max-width:1100px;
 margin:40px auto;
 padding:20px;
 }
 
-/* TABS */
-.tabs{
-display:flex;
-gap:10px;
-margin-bottom:20px;
-}
-
-.tab{
-padding:10px 14px;
-background:#111827;
-border:1px solid rgba(255,255,255,0.1);
-border-radius:8px;
-cursor:pointer;
-font-size:13px;
-opacity:0.8;
-}
-
-.tab.active{
-background:#dc2626;
-opacity:1;
-}
-
-/* CARD */
 .card{
-background:rgba(17,24,39,0.75);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:16px;
+background:rgba(17,24,39,0.78);
 padding:25px;
+border-radius:16px;
+border:1px solid rgba(255,255,255,0.08);
 backdrop-filter: blur(12px);
-box-shadow:0 0 50px rgba(0,0,0,0.6);
+box-shadow:0 0 60px rgba(0,0,0,0.7);
 }
 
-/* GRID */
 .grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:20px;
 }
 
-/* BOX */
 .box{
-background:rgba(2,6,23,0.6);
+background:rgba(2,6,23,0.65);
 padding:15px;
 border-radius:12px;
 border:1px solid rgba(255,255,255,0.05);
 }
 
-/* LABEL */
 .label{
 font-size:11px;
 letter-spacing:1px;
 text-transform:uppercase;
 color:#93c5fd;
-opacity:0.9;
 }
 
 .value{
 margin-top:6px;
 font-size:14px;
+line-height:1.5;
 }
 
-/* ALERT */
-.alert{
-color:#ef4444;
-font-weight:700;
-}
-
-/* WARNING */
 .warning{
 margin-top:15px;
 padding:15px;
@@ -149,7 +81,11 @@ border-left:3px solid #ef4444;
 background:rgba(239,68,68,0.08);
 }
 
-/* FOOTER */
+.alert{
+color:#ef4444;
+font-weight:800;
+}
+
 .footer{
 text-align:center;
 margin-top:25px;
@@ -157,131 +93,160 @@ font-size:11px;
 opacity:0.5;
 letter-spacing:2px;
 }
-
-/* HIDE */
-.hidden{display:none}
 </style>
 </head>
 
 <body>
 
-<div class="scanline"></div>
-
 <div class="topbar">
 <div class="logo">PILTOVER MEDICAL CORE</div>
-<div class="status">ACCESS LEVEL: RESTRICTED // FILE ACTIVE</div>
+<div class="status">FILE: CK-0712 // SECURITY LEVEL: 5 // STATUS: MONITORING</div>
 </div>
-
-<div class="stamp">СЕКРЕТНО</div>
 
 <div class="container">
 
-<div class="tabs">
-<div class="tab active" onclick="showTab(0)">ДОСЬЕ</div>
-<div class="tab" onclick="showTab(1)">МЕДИЦИНА</div>
-<div class="tab" onclick="showTab(2)">ИНЦИДЕНТ</div>
-<div class="tab" onclick="showTab(3)">ПСИХО</div>
-</div>
-
 <div class="card">
-
-<!-- TAB 1 -->
-<div class="tabContent">
 
 <div class="grid">
 
 <div class="box">
-<div class="label">Пациент</div>
+<div class="label">ПАЦИЕНТ</div>
 <div class="value"><b>Кейтлин Кирамман</b></div>
 
+<div class="label" style="margin-top:10px;">Дата рождения</div>
+<div class="value">07.02</div>
+
 <div class="label" style="margin-top:10px;">Возраст</div>
-<div class="value">18 лет</div>
+<div class="value">18 лет (на момент инцидента)</div>
 
-<div class="label" style="margin-top:10px;">Рождение</div>
-<div class="value">07.02 — Пилтовер</div>
-</div>
+<div class="label" style="margin-top:10px;">Город</div>
+<div class="value">Пилтовер</div>
 
-<div class="box">
-<div class="label">Статус</div>
+<div class="label" style="margin-top:10px;">Должность</div>
 <div class="value">Офицер полиции Пилтовера</div>
 
-<div class="label" style="margin-top:10px;">Состояние</div>
-<div class="value">Под наблюдением</div>
+<div class="label" style="margin-top:10px;">Статус</div>
+<div class="value">Под наблюдением (пост-травматический контроль)</div>
 </div>
-
-</div>
-
-</div>
-
-<!-- TAB 2 -->
-<div class="tabContent hidden">
 
 <div class="box">
-<div class="label">Медицинские особенности</div>
+<div class="label">АНАМНЕЗ ДО ИНЦИДЕНТА</div>
 <div class="value">
-• Хроническая мигрень<br>
-• Бессонница<br>
-• Боли в кистях рук<br>
-• Повышенная нагрузка нервной системы
+• Хронические мигрени (с подросткового возраста)<br>
+• Бессонница (прогрессирующая форма)<br>
+• Повышенная нагрузка на кисти (служебная деятельность)<br>
+• Эпизоды эмоционального истощения<br>
+• Повышенная стрессоустойчивость (аномально высокая)
+</div>
+
+<div class="label" style="margin-top:10px;">НАБЛЮДЕНИЯ</div>
+<div class="value">
+Пациент демонстрировал высокий уровень самоконтроля и игнорирование болевых симптомов до критической стадии.
 </div>
 </div>
 
 </div>
-
-<!-- TAB 3 -->
-<div class="tabContent hidden">
 
 <div class="warning">
-<div class="label">ИНЦИДЕНТ 2020</div>
+
+<div class="label">ХРОНОЛОГИЯ ИНЦИДЕНТА // 2020</div>
 <br>
-Взрыв здания в Пилтовере.<br>
-Пациентка отброшена ударной волной на асфальт.<br><br>
 
-<span class="alert">Клиническая смерть: 20 минут</span><br><br>
+[00:00] Взрыв промышленного объекта в центральном районе Пилтовера.<br>
+[00:02] Ударная волна разрушает конструкцию здания.<br>
+[00:03] Пациентка выброшена на бетонное покрытие.<br>
+[00:04] Потеря сознания.<br>
+[00:06] Остановка сердечной деятельности.<br><br>
 
-Множественные переломы, черепно-мозговая травма, внутренние повреждения.
+<span class="alert">КЛИНИЧЕСКАЯ СМЕРТЬ: 20 МИНУТ</span><br><br>
+
+[00:26] Успешное восстановление сердечного ритма.<br>
+[00:30] Перевод на искусственную вентиляцию лёгких.<br>
+[00:45] Стабилизация жизненных показателей.
+
 </div>
 
-</div>
-
-<!-- TAB 4 -->
-<div class="tabContent hidden">
+<div class="grid" style="margin-top:15px;">
 
 <div class="box">
-<div class="label">Состояние после реанимации</div>
+<div class="label">ТРАВМАТОЛОГИЯ</div>
 <div class="value">
-Резкое пробуждение, сильный крик, потеря голоса.<br>
-Дезориентация до 6 минут после пробуждения.
+• Перелом ребер (множественный)<br>
+• Перелом ключицы (смещённый)<br>
+• Сотрясение мозга III степени<br>
+• Внутренние ушибы органов брюшной полости<br>
+• Разрыв мягких тканей плечевого пояса<br>
+• Сильная компрессия грудной клетки
+</div>
 </div>
 
-<div class="label" style="margin-top:10px;">Рекомендации</div>
+<div class="box">
+<div class="label">РЕАНИМАЦИЯ</div>
 <div class="value">
-Постоянное наблюдение. Минимизация стресса.
+• 3 попытки дефибрилляции<br>
+• Интубация (успешная с 1 попытки)<br>
+• ИВЛ: 42 минуты<br>
+• Адреналиновая поддержка<br>
+• Восстановление сердечного ритма — синусовый
 </div>
 </div>
 
+</div>
+
+<div class="box" style="margin-top:15px;">
+<div class="label">ПОСТРЕАНИМАЦИОННОЕ СОСТОЯНИЕ</div>
+<div class="value">
+• Резкое пробуждение<br>
+• Крик высокой интенсивности (до срыва голосовых связок)<br>
+• Афония (временная потеря голоса — 48 часов)<br>
+• Дезориентация (до 6–8 минут)<br>
+• Тахикардия (до 160 bpm)<br>
+• Паническая реакция на внешние стимулы
+</div>
+</div>
+
+<div class="box" style="margin-top:15px;">
+<div class="label">НЕВРОЛОГИЯ</div>
+<div class="value">
+• Повышенная чувствительность к свету и шуму<br>
+• Нарушение сна после инцидента<br>
+• Эпизоды флэшбеков<br>
+• Риск развития хронического ПТСР<br>
+• Стабильное, но напряжённое когнитивное состояние
+</div>
+</div>
+
+<div class="box" style="margin-top:15px;">
+<div class="label">ПСИХИАТРИЧЕСКОЕ ЗАКЛЮЧЕНИЕ</div>
+<div class="value">
+Рекомендуется длительная терапия:<br>
+• когнитивно-поведенческая терапия<br>
+• контроль сна<br>
+• ограничение боевых и стрессовых ситуаций<br><br>
+
+Эмоциональный профиль: подавленные реакции + высокая внутренняя концентрация.
+</div>
+</div>
+
+<div class="box" style="margin-top:15px;">
+<div class="label">СЛУЖЕБНЫЕ ПРИМЕЧАНИЯ (СОВЕТ ПИЛТОВЕРА)</div>
+<div class="value">
+Документ засекречен.<br>
+Причина: высокий политический и социальный статус пациента.<br><br>
+
+Дополнительно:
+• наблюдается аномальная устойчивость к критическим травмам<br>
+• требуется дальнейшее изучение физиологических реакций после клинической смерти
+</div>
 </div>
 
 </div>
 
 <div class="footer">
-PILTOVER CLASSIFIED MEDICAL SYSTEM // DO NOT DISTRIBUTE
+PILTOVER MEDICAL CORE // ULTRA CLASSIFIED DOSSIER // DO NOT DISTRIBUTE
 </div>
 
 </div>
-
-<script>
-function showTab(index){
-let tabs=document.querySelectorAll(".tab");
-let contents=document.querySelectorAll(".tabContent");
-
-tabs.forEach(t=>t.classList.remove("active"));
-tabs[index].classList.add("active");
-
-contents.forEach(c=>c.classList.add("hidden"));
-contents[index].classList.remove("hidden");
-}
-</script>
 
 </body>
 </html>
